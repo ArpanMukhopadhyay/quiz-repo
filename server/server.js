@@ -13,7 +13,7 @@ app.post('/dummyJson', (req,res) => {
     res.status(201.).send(issue);
 });
 
-app.get('/dummyJson', (res,res) =>{
+app.get('/dummyJson', (req,res) =>{
     res.send(dummyJson);
 })
 
