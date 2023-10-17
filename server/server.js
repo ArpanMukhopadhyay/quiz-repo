@@ -10,7 +10,7 @@ app.post('/dummyJson', (req,res) => {
     let issue = req.body;
     dummyJson.push(issue);
     console.log('json created', issue);
-    res.status(201.).send(issue);
+    res.status(201).send(issue);
 });
 
 app.get('/dummyJson', (req,res) =>{
@@ -18,7 +18,7 @@ app.get('/dummyJson', (req,res) =>{
 })
 
 app.put('/dummyJson/:id', (req,res) =>{
-    let data = dummyJson.find(i => find(i => i.id === parseInt(req.params.id)));
+    let data = dummyJson.find(i => i.id === parseInt(req.params.id));
     if (data){
         data.title = req.body.title;
         data.description = req.body.description;
@@ -30,7 +30,7 @@ app.put('/dummyJson/:id', (req,res) =>{
     }
 });
 
-app.delete('dummyJson/:id', (req,res) =>{
+app.delete('/dummyJson/:id', (req,res) =>{
     let idx = dummyJson.findIndex(i=> i.id === parseInt(req.params.id));
     if (idx !== -1){
         console.log('deleted', dummyJson[idx]);
