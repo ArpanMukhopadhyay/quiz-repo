@@ -7,12 +7,12 @@ app.use(CORS());
 app.use(express.json());
 
 let dummyJson = [];
-let lastId = 0; // Initialize a variable for ID assignment
+let lastId = 0;
 
 app.post('/dummyJson', (req, res) => {
     let issue = req.body;
-    lastId++;  // Increment the ID
-    issue.id = lastId;  // Assign the new ID to the issue
+    lastId++;  
+    issue.id = lastId;
     dummyJson.push(issue);
     console.log('json created', issue);
     res.status(201).send(issue);
